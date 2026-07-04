@@ -1,0 +1,6 @@
+{
+  "name": "Rampalm OS",
+  "description": "Satu sistem untuk timbang, beli, stok, kirim, bayar, dan pantau profit RAM sawit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

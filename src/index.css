@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUpFadeIn {
+  animation: slideUpFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print CSS Media Queries */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Hide every single thing on the screen by default during print */
+  body > div, 
+  body > section,
+  body > main,
+  body > header,
+  body > footer,
+  #root,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show only the dedicated print area */
+  #print-area {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    visibility: visible !important;
+  }
+  
+  #print-area * {
+    visibility: visible !important;
+  }
+
+  /* Support for thermal paper roll widths */
+  .thermal-roll {
+    width: 80mm !important; /* Standard 80mm thermal receipt printer width */
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 2mm !important;
+    font-size: 10px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+  }
+  
+  .thermal-roll * {
+    font-size: 10px !important;
+  }
+}
+
+@media screen {
+  #print-area {
+    display: none;
+  }
+}
+
+/* Modern & Elegant Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 115, 107, 0.2);
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 115, 107, 0.45);
+}
+
+/* Custom glow matching our Rampalm OS logo for dark containers (sidebar) */
+aside ::-webkit-scrollbar-thumb {
+  background: rgba(198, 242, 74, 0.15);
+}
+
+aside ::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 242, 74, 0.4);
+}
+
+/* Firefox scrollbar compatibility */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102, 115, 107, 0.2) transparent;
+}
+
+aside {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(198, 242, 74, 0.15) transparent;
+}
+
+
